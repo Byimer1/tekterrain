@@ -1,15 +1,28 @@
 import { useState } from 'react';
 import { Shield, Target, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
 
+const BASE = 'https://www.tekterrain.com/blwp/wp-content/uploads/2018/10';
+
 const slides1 = [
-  'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80',
-  'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80',
-  'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+  `${BASE}/Cairn-Baridhara-ODU-75dpi-1.jpg`,
+  `${BASE}/PraDeshta-Microwave-Tower-pic-7-1.jpg`,
+  `${BASE}/Cairn-IDB-Radio-1.jpg`,
+  `${BASE}/FH000036.jpg`,
+  `${BASE}/FH000032.jpg`,
+  `${BASE}/PraDeshta-VSAT-pic-1-1.jpg`,
+  `${BASE}/300-DDPI-A-2.jpg`,
+  `${BASE}/FH000023-1.jpg`,
 ];
+
 const slides2 = [
-  'https://images.unsplash.com/photo-1457364559154-aa2644605ebb?w=800&q=80',
-  'https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=800&q=80',
-  'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80',
+  `${BASE}/CAM00858.jpg`,
+  `${BASE}/CAM00859.jpg`,
+  `${BASE}/2014-10-24-16.52.58.jpg`,
+  `${BASE}/IMG_6858.jpg`,
+  `${BASE}/IMG_6890.jpg`,
+  `${BASE}/CAM00066.jpg`,
+  `${BASE}/077.jpg`,
+  `${BASE}/IMG_4201.jpg`,
 ];
 
 function ImageSlider({
