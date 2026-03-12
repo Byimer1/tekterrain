@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import Landing from './components/Landing';
 import Hero from './components/Hero';
 import Mission from './components/Mission';
 import About from './components/About';
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <Header />
+      <Landing />
       <Hero />
       <Mission />
       <About />

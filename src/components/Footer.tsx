@@ -48,9 +48,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center">
+        <div className="border-t border-gray-700 mt-12 pt-8 text-center space-y-2">
           <p className="text-gray-400">
             SP&CE&reg;, systemsfor.space&reg;, systemsfor.earth&reg; are registered trademarks of Tek Terrain LLC.
+          </p>
+          <p className="text-gray-500 text-sm">
+            &copy; 2026 Tek Terrain LLC. All Rights Reserved.
           </p>
         </div>
       </div>

@@ -1,29 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Shield, Target, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const BASE = 'https://www.tekterrain.com/blwp/wp-content/uploads/2018/10';
+const earthGlob = import.meta.glob('../asset/EARTH/*', { eager: true }) as Record<string, { default: string }>;
+const spaceGlob = import.meta.glob('../asset/SPACE/*', { eager: true }) as Record<string, { default: string }>;
 
-const slides1 = [
-  `${BASE}/Cairn-Baridhara-ODU-75dpi-1.jpg`,
-  `${BASE}/PraDeshta-Microwave-Tower-pic-7-1.jpg`,
-  `${BASE}/Cairn-IDB-Radio-1.jpg`,
-  `${BASE}/FH000036.jpg`,
-  `${BASE}/FH000032.jpg`,
-  `${BASE}/PraDeshta-VSAT-pic-1-1.jpg`,
-  `${BASE}/300-DDPI-A-2.jpg`,
-  `${BASE}/FH000023-1.jpg`,
-];
+const slides1 = Object.keys(earthGlob)
+  .sort()
+  .map((key) => earthGlob[key].default);
 
-const slides2 = [
-  `${BASE}/CAM00858.jpg`,
-  `${BASE}/CAM00859.jpg`,
-  `${BASE}/2014-10-24-16.52.58.jpg`,
-  `${BASE}/IMG_6858.jpg`,
-  `${BASE}/IMG_6890.jpg`,
-  `${BASE}/CAM00066.jpg`,
-  `${BASE}/077.jpg`,
-  `${BASE}/IMG_4201.jpg`,
-];
+const slides2 = Object.keys(spaceGlob)
+  .sort()
+  .map((key) => spaceGlob[key].default);
 
 function ImageSlider({
   images,
@@ -80,8 +67,8 @@ export default function Mission() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setSlide1Index((s) => (s + 1) % slides1.length);
-      setSlide2Index((s) => (s + 1) % slides2.length);
+      if (slides1.length > 0) setSlide1Index((s) => (s + 1) % slides1.length);
+      if (slides2.length > 0) setSlide2Index((s) => (s + 1) % slides2.length);
     }, 4000);
 
     return () => clearInterval(intervalId);
