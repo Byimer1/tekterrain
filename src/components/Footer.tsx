@@ -21,9 +21,9 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="text-[#82d830] flex-shrink-0 mt-1" size={24} />
                 <p className="text-gray-300">
-                  1425 4th St SW #A115<br />
-                  Washington, DC 20024<br />
-                  United States
+                  4119 Beck St SE<br />
+                  Washington, DC 20019<br />
+                  USA
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ export default function Footer() {
                   href="tel:+12028123325"
                   className="text-gray-300 hover:text-[#82d830] transition-colors"
                 >
-                  (202) 812-3325
+                  +1 (202) 812-3325
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Tek Terrain LLC. All rights reserved.
+            SP&CE&reg;, systemsfor.space&reg;, systemsfor.earth&reg; are registered trademarks of Tek Terrain LLC.
           </p>
         </div>
       </div>

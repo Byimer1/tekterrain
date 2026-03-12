@@ -1,4 +1,4 @@
-import { Rocket, Zap, Radio } from 'lucide-react';
+import { Zap, Radio } from 'lucide-react';
 import spaceimg from '../asset/space_image.jpg';
 
 export default function Hero() {
@@ -13,11 +13,11 @@ export default function Hero() {
       title: '4-channel SmallSat/CubeSat conformal thruster pack',
       patent: 'Patent Pending',
     },
-    {
-      icon: Rocket,
-      title: 'Scalable Stratosphere/VLEO/LEO electric propulsion subsystem',
-      patent: 'Patent Pending',
-    },
+    // {
+    //   icon: Rocket,
+    //   title: 'Scalable Stratosphere/VLEO/LEO electric propulsion subsystem',
+    //   patent: 'Patent Pending',
+    // },
   ];
 
   return (
@@ -126,23 +126,23 @@ export default function Hero() {
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div className="text-center mb-16">
-      <h2 className="text-5xl md:text-6xl font-bold mb-6">
-        Advanced Propulsion for
-        <span className="text-[#82d830]"> Small Spacecraft</span>
+      <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
+         SP<span className="text-[#FFA500]">&amp;</span>CE<sup className="align-super text-2xl" style={{ fontSize: '2rem' }} >&reg;</sup>
       </h2>
 
+
       <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-        Pioneering electric propulsion technologies for the next generation of space missions
+      Space propulsion and communications engineering services
       </p>
     </div>
 
-    <div className="mb-12 text-center">
+    {/* <div className="mb-12 text-center">
       <div className="inline-block bg-[#82d830] text-[#0b0025] px-6 py-3 rounded-full font-bold text-lg mb-8">
         In Development (2026)
       </div>
-    </div>
+    </div> */}
 
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 gap-8">
       {technologies.map((tech, index) => {
         const Icon = tech.icon;
 

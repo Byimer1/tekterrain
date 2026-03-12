@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Shield, Target, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const BASE = 'https://www.tekterrain.com/blwp/wp-content/uploads/2018/10';
@@ -77,6 +77,15 @@ function ImageSlider({
 export default function Mission() {
   const [slide1Index, setSlide1Index] = useState(0);
   const [slide2Index, setSlide2Index] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setSlide1Index((s) => (s + 1) % slides1.length);
+      setSlide2Index((s) => (s + 1) % slides2.length);
+    }, 4000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const values = [
     {
