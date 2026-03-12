@@ -1,5 +1,60 @@
-import { Zap, Radio } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Zap, Radio, ChevronLeft, ChevronRight } from 'lucide-react';
 import spaceimg from '../asset/space_image.jpg';
+const spaceGlob = import.meta.glob('../asset/SPACE/*', { eager: true }) as Record<string, { default: string }>;
+
+const propulsionSlides = Object.keys(spaceGlob)
+  .sort()
+  .map((key) => spaceGlob[key].default);
+
+function ImageSlider({
+  images,
+  current,
+  onPrev,
+  onNext,
+}: {
+  images: string[];
+  current: number;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
+  if (images.length === 0) return null;
+  const showArrows = images.length > 1;
+  return (
+    <div className="relative max-w-4xl mx-auto">
+      <div className="overflow-hidden rounded-xl bg-gray-100/10 shadow-lg">
+        <img
+          src={images[current]}
+          alt=""
+          className="w-full aspect-video object-cover"
+        />
+      </div>
+      {showArrows && (
+        <div className="flex items-center justify-center gap-4 mt-4">
+          <button
+            type="button"
+            onClick={onPrev}
+            className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <span className="text-sm font-medium text-gray-200">
+            {current + 1} / {images.length}
+          </span>
+          <button
+            type="button"
+            onClick={onNext}
+            className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Hero() {
   const technologies = [
@@ -19,6 +74,17 @@ export default function Hero() {
     //   patent: 'Patent Pending',
     // },
   ];
+
+  const [propulsionIndex, setPropulsionIndex] = useState(0);
+
+  useEffect(() => {
+    if (propulsionSlides.length === 0) return;
+    const intervalId = setInterval(
+      () => setPropulsionIndex((s) => (s + 1) % propulsionSlides.length),
+      4000,
+    );
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     // <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-[#0b0025] to-[#2e078e] text-white">
@@ -132,7 +198,7 @@ export default function Hero() {
 
 
       <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-      Space propulsion and communications engineering services
+      Space propulsion and communications engineering products and services
       </p>
     </div>
 
@@ -165,6 +231,29 @@ export default function Hero() {
           </div>
         );
       })}
+    </div>
+
+    <div className="mt-16">
+      <h3 className="text-3xl font-bold mb-4 text-center">
+        Electric propulsion system
+      </h3>
+      <p className="text-gray-200 text-center max-w-3xl mx-auto mb-6">
+        Microthruster testbed and flight hardware (2013–2015). Control unit and control algorithms development by S. Haque.
+      </p>
+      <ImageSlider
+        images={propulsionSlides}
+        current={propulsionIndex}
+        onPrev={() =>
+          setPropulsionIndex((s) =>
+            s === 0 ? propulsionSlides.length - 1 : s - 1,
+          )
+        }
+        onNext={() =>
+          setPropulsionIndex((s) =>
+            s === propulsionSlides.length - 1 ? 0 : s + 1,
+          )
+        }
+      />
     </div>
 
   </div>

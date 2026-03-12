@@ -43,7 +43,7 @@ export default function Landing() {
             </span>
           </a>
           <a
-            href="#about"
+            href="#solutions"
             className="bg-white/10 backdrop-blur-sm rounded-lg py-12 px-8 hover:bg-white/20 transition-all duration-300 hover:scale-105 text-center block border border-white/10"
           >
             <span className="text-2xl md:text-3xl font-bold text-white">

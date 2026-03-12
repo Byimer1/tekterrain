@@ -2,15 +2,10 @@ import { useState, useEffect } from 'react';
 import { Shield, Target, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const earthGlob = import.meta.glob('../asset/EARTH/*', { eager: true }) as Record<string, { default: string }>;
-const spaceGlob = import.meta.glob('../asset/SPACE/*', { eager: true }) as Record<string, { default: string }>;
 
 const slides1 = Object.keys(earthGlob)
   .sort()
   .map((key) => earthGlob[key].default);
-
-const slides2 = Object.keys(spaceGlob)
-  .sort()
-  .map((key) => spaceGlob[key].default);
 
 function ImageSlider({
   images,
@@ -63,12 +58,10 @@ function ImageSlider({
 
 export default function Mission() {
   const [slide1Index, setSlide1Index] = useState(0);
-  const [slide2Index, setSlide2Index] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (slides1.length > 0) setSlide1Index((s) => (s + 1) % slides1.length);
-      if (slides2.length > 0) setSlide2Index((s) => (s + 1) % slides2.length);
     }, 4000);
 
     return () => clearInterval(intervalId);
@@ -150,18 +143,6 @@ export default function Mission() {
             />
           </div>
 
-          {/* Block 2: Microthruster */}
-          <div>
-            <p className="text-gray-700 leading-relaxed mb-6 max-w-4xl mx-auto">
-              Microthruster testbed and Flight Hardware (2013-2015). Control Unit and control algorithms development by S. Haque.
-            </p>
-            <ImageSlider
-              images={slides2}
-              current={slide2Index}
-              onPrev={() => setSlide2Index((s) => (s === 0 ? slides2.length - 1 : s - 1))}
-              onNext={() => setSlide2Index((s) => (s === slides2.length - 1 ? 0 : s + 1))}
-            />
-          </div>
         </div>
       </div>
     </section>
