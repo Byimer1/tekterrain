@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Shield, Target, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
-import { GiRunningNinja } from "react-icons/gi";
-import { FaPeopleRoof } from "react-icons/fa6";
-import { GiRocketFlight } from "react-icons/gi";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 const earthGlob = import.meta.glob('../asset/EARTH/*', { eager: true }) as Record<string, { default: string }>;
 
 const slides1 = Object.keys(earthGlob)
@@ -69,60 +66,11 @@ export default function Mission() {
     return () => clearInterval(intervalId);
   }, []);
 
-  const values = [
-    {
-      icon: GiRunningNinja,
-      title: 'Agile Engineering ',
-      description: 'Lean-business model influenced agile engineering management and operations',
-    },
-    {
-      icon: FaPeopleRoof,
-      title: 'Capable and Mature',
-      description: 'Multi-domain Science, R&D and Engineering expertise in Aerospace industry ',
-    },
-    {
-      icon: GiRocketFlight,
-      title: 'Flight Heritage',
-      description: 'Adapting flight proven heritage designs ',
-    },
-  ];
-
   return (
     <section id="solutions" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#000000] mb-6">
-            Our Mission
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-          Developing technologies for Future Space Transportation Systems <br />and Off-Earth AI/AGI Data Centers.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-          {values.map((value, index) => {
-            const Icon = value.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="bg-[#FFA500] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <Icon className="text-[#0b0025]" size={32} />
-                </div>
-                <h3 className="text-2xl font-bold text-[#000000] mb-4 text-center">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Portable HF Antennas & RF Showcase */}
-        <div className="mt-20 pt-16 border-t border-gray-200">
+        {/* RF / Photos section only */}
+        <div className="pt-4 border-t border-gray-200">
           <h3 className="text-3xl font-bold text-[#000000] mb-2">
             RF and Communications Engineering
           </h3>
