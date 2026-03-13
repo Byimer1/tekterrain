@@ -217,7 +217,7 @@ export default function Hero() {
             key={index}
             className="bg-white/10 backdrop-blur-sm rounded-lg p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
-            <div className="bg-[#82d830] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-[#FFA500] w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <Icon className="text-[#0b0025]" size={32} />
             </div>
 
@@ -225,7 +225,7 @@ export default function Hero() {
               {tech.title}
             </h3>
 
-            <p className="text-[#82d830] font-medium">
+            <p className="text-[#FFA500] font-medium">
               {tech.patent}
             </p>
           </div>

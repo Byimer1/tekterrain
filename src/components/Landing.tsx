@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import landingBg from '../asset/wallpaperflare.com_wallpaper.jpg';
+import landingBg from '../asset/starbasebg.jpg';
 
 const TITLE = 'TEK TERRAIN LLC';
 const TYPING_MS = 120;

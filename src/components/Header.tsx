@@ -67,20 +67,20 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "#" },
     { name: "Solutions", href: "#solutions" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-[#0b0025] shadow-lg">
+    <header className="fixed w-full top-0 z-50 bg-[#000000] shadow-lg">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#home" className="flex items-center space-x-3">
+            <a href="#" className="flex items-center space-x-3">
               <img
                 src={logo}
                 alt="Tek Terrain LLC"
@@ -98,7 +98,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white hover:text-[#82d830] transition-colors duration-300 font-medium"
+                className="text-white hover:text-[#FFA500] transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>
@@ -121,7 +121,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-white hover:text-[#82d830] transition-colors"
+                className="block py-2 text-white hover:text-[#FFA500] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

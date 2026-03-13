@@ -6,12 +6,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-3xl font-bold text-[#82d830] mb-6">
+            <h3 className="text-3xl font-bold text-[#FFA500] mb-6">
               Tek Terrain LLC
             </h3>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Designing and building secure, robust, and capable subsystems for
-              the future of space exploration.
+            Developing technologies for Future Space Transportation Systems
+            and Off-Earth AI/AGI Data Centers.
             </p>
           </div>
 
@@ -19,7 +19,7 @@ export default function Footer() {
             <h4 className="text-2xl font-bold mb-6">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="text-[#82d830] flex-shrink-0 mt-1" size={24} />
+                <MapPin className="text-[#FFA500] flex-shrink-0 mt-1" size={24} />
                 <p className="text-gray-300">
                   4119 Beck St SE<br />
                   Washington, DC 20019<br />
@@ -27,19 +27,19 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-[#82d830] flex-shrink-0" size={24} />
+                <Phone className="text-[#FFA500] flex-shrink-0" size={24} />
                 <a
                   href="tel:+12028123325"
-                  className="text-gray-300 hover:text-[#82d830] transition-colors"
+                  className="text-gray-300 hover:text-[#FFA500] transition-colors"
                 >
                   +1 (202) 812-3325
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="text-[#82d830] flex-shrink-0" size={24} />
+                <Mail className="text-[#FFA500] flex-shrink-0" size={24} />
                 <a
                   href="mailto:info@tekterrain.com"
-                  className="text-gray-300 hover:text-[#82d830] transition-colors"
+                  className="text-gray-300 hover:text-[#FFA500] transition-colors"
                 >
                   info@tekterrain.com
                 </a>

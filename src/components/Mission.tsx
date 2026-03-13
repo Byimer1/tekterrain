@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Shield, Target, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
-
+import { GiRunningNinja } from "react-icons/gi";
+import { FaPeopleRoof } from "react-icons/fa6";
+import { GiRocketFlight } from "react-icons/gi";
 const earthGlob = import.meta.glob('../asset/EARTH/*', { eager: true }) as Record<string, { default: string }>;
 
 const slides1 = Object.keys(earthGlob)
@@ -69,19 +71,19 @@ export default function Mission() {
 
   const values = [
     {
-      icon: Shield,
-      title: 'Secure',
-      description: 'Robust security measures for mission-critical systems',
+      icon: GiRunningNinja,
+      title: 'Agile Engineering ',
+      description: 'Lean-business model influenced agile engineering management and operations',
     },
     {
-      icon: Target,
-      title: 'Capable',
-      description: 'Advanced capabilities for complex space missions',
+      icon: FaPeopleRoof,
+      title: 'Capable and Mature',
+      description: 'Multi-domain Science, R&D and Engineering expertise in Aerospace industry ',
     },
     {
-      icon: Cpu,
-      title: 'Tested',
-      description: 'Rigorously tested subsystems and instruments',
+      icon: GiRocketFlight,
+      title: 'Flight Heritage',
+      description: 'Adapting flight proven heritage designs ',
     },
   ];
 
@@ -89,12 +91,11 @@ export default function Mission() {
     <section id="solutions" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2e078e] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#000000] mb-6">
             Our Mission
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            To design and build secure, robust, capable and tested subsystems and instruments
-            for small spacecraft missions and Human spaceflight.
+          Developing technologies for Future Space Transportation Systems <br />and Off-Earth AI/AGI Data Centers.
           </p>
         </div>
 
@@ -106,10 +107,10 @@ export default function Mission() {
                 key={index}
                 className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="bg-[#82d830] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <div className="bg-[#FFA500] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <Icon className="text-[#0b0025]" size={32} />
                 </div>
-                <h3 className="text-2xl font-bold text-[#2e078e] mb-4 text-center">
+                <h3 className="text-2xl font-bold text-[#000000] mb-4 text-center">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 text-center leading-relaxed">
@@ -122,8 +123,8 @@ export default function Mission() {
 
         {/* Portable HF Antennas & RF Showcase */}
         <div className="mt-20 pt-16 border-t border-gray-200">
-          <h3 className="text-3xl font-bold text-[#2e078e] mb-2">
-            Portable HF Antennas & RF operation peripherals
+          <h3 className="text-3xl font-bold text-[#000000] mb-2">
+            RF and Communications Engineering
           </h3>
           <p className="text-xl text-gray-600 mb-1">Showcase</p>
           <p className="text-sm text-gray-500 mb-8">
